@@ -1,1 +1,1 @@
-# Vokabulary_trainer
+# Vokabulary trainer
