@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://1ry1ff1i21e3"]
+
+[ext_resource type="Script" uid="uid://pjwjl48shne1" path="res://Scripts/main.gd" id="1_jjgbg"]
+
+[node name="main" type="Control" unique_id=1059408095]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jjgbg")
+
+[node name="Backround" type="ColorRect" parent="." unique_id=91172502]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="." unique_id=1623194741]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -118.0
+offset_top = -239.0
+offset_right = 118.0
+grow_horizontal = 2
+grow_vertical = 0
+item_count = 1
+item_0/text = "test"
+
+[node name="create project" type="Button" parent="." unique_id=1566238801]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = -95.0
+offset_right = 292.0
+offset_bottom = -29.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "CREATE PROJECT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=932321531]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1534.0
+offset_right = 1534.0
+offset_bottom = 289.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 192
+text = "VOKABULARY TRAINER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="create project" to="." method="_on_create_project_pressed"]
