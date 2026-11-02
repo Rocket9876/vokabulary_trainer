@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c26jngxfbr7hf"]
+
+[node name="vokabulary list" type="Control" unique_id=1736957795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="." unique_id=363365562]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 162.0
+auto_width = true
+item_count = 4
+max_columns = 3
+item_0/text = "servus |"
+item_1/text = "12345666778 |"
+item_2/text = "898989"
+item_3/text = "|"

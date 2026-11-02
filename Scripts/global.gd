@@ -11,7 +11,9 @@ var projects = []
 func _ready() -> void:
 	startup_loading_data()
 
+var current_project
 
+var current_project_index
 
 func startup_loading_data():
 	load_projects()
@@ -35,3 +37,15 @@ func load_projects():
 
 func save_projects():
 	saving_data(projects_path,projects)
+
+func create_new_project(name,path,first_lang,second_lang,grammar = false):
+	projects += [{"name":name,"path":path,"first language": first_lang, "second language": second_lang, "grammar":grammar}]
+	DirAccess.make_dir_absolute(path)
+	save_projects()
+
+
+func save_new_vokabulary(project:Dictionary,first_lang_vok,second_lang_vok,grammar = null):
+	var vokabulary = {project["first language"]:first_lang_vok,project["second language"]:second_lang_vok,"value":0}
+	if grammar:
+		vokabulary += {"grammar":grammar}
+	saving_data(project["path"] + "vokabulary",vokabulary)

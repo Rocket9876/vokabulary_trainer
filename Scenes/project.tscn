@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cifj7s83wvagb"]
+
+[ext_resource type="Script" uid="uid://b8i0y0wgp76ud" path="res://Scripts/project.gd" id="1_q7gev"]
+
+[node name="Project" type="Control" unique_id=1760123832]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q7gev")
+
+[node name="Project" type="RichTextLabel" parent="." unique_id=249674429]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1246.5
+offset_right = 1246.5
+offset_bottom = 170.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 96
+text = "PROJECT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="add vokabulary" type="Button" parent="." unique_id=1407612545]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.5
+offset_top = -365.0
+offset_right = 280.5
+offset_bottom = -231.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "ADD VOKABULARY"
+
+[connection signal="pressed" from="add vokabulary" to="." method="_on_add_vokabulary_pressed"]

@@ -12,3 +12,9 @@ func update_project_list():
 	project_list.item_count = global.projects.size()
 	for i in range(0,global.projects.size()):
 		project_list.set_item_text(i,global.projects[i]["name"])
+
+
+func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
+	global.current_project = global.projects[index]
+	global.current_project_index = index
+	get_tree().change_scene_to_file("res://Scenes/project.tscn")

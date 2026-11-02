@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://cg00v3y7hluqf"]
+
+[ext_resource type="Script" uid="uid://dous6o20lseft" path="res://Scripts/add_vokabulary.gd" id="1_ct53o"]
+
+[sub_resource type="Animation" id="Animation_ct53o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("signal:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signal:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1450, 1106.0001)]
+}
+
+[sub_resource type="Animation" id="Animation_5eoyq"]
+resource_name = "vokabulary updatet"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("signal:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("signal:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1450, 1106.0001), Vector2(1383.0001, 823.99976)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gp3bh"]
+_data = {
+&"RESET": SubResource("Animation_ct53o"),
+&"vokabulary updatet": SubResource("Animation_5eoyq")
+}
+
+[node name="add vokabulary" type="Control" unique_id=252255758]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ct53o")
+
+[node name="add vokabulary" type="RichTextLabel" parent="." unique_id=1657021026]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1246.5
+offset_right = 1246.5
+offset_bottom = 170.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 128
+text = "ADDING VOKABULARY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="first lang" type="TextEdit" parent="." unique_id=670242241]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -229.5
+offset_right = 349.0
+offset_bottom = -154.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "first lang"
+
+[node name="second lang" type="TextEdit" parent="." unique_id=1819292560]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -37.5
+offset_right = 349.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "second lang"
+
+[node name="grammar" type="TextEdit" parent="." unique_id=547222705]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = 154.0
+offset_right = 349.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "grammar"
+
+[node name="Save" type="Button" parent="." unique_id=1932995495]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -111.5
+offset_top = -140.0
+offset_right = 111.5
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "SAVE"
+
+[node name="Back" type="Button" parent="." unique_id=1176509161]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -90.0
+offset_right = 199.0
+offset_bottom = -32.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "BACK"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1746389452]
+libraries/ = SubResource("AnimationLibrary_gp3bh")
+
+[node name="signal" type="RichTextLabel" parent="." unique_id=1523379164]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -854.0
+offset_top = -189.99988
+offset_right = -170.03418
+offset_bottom = 166.99707
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.23313163
+theme_override_colors/default_color = Color(0.34509805, 0.8392157, 0.5568628, 1)
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "✅VOKABULARY UPDATED
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -62,4 +62,5 @@ text = "VOKABULARY TRAINER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="item_clicked" from="ItemList" to="." method="_on_item_list_item_clicked"]
 [connection signal="pressed" from="create project" to="." method="_on_create_project_pressed"]
