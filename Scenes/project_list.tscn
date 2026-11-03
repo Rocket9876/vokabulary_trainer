@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://yawgsf0d3a06"]
+
+[ext_resource type="Script" uid="uid://cmbyby4jn1erb" path="res://Scripts/project_list.gd" id="1_72t6e"]
+
+[node name="Project list" type="ItemList" unique_id=1506799792]
+offset_left = -178.0
+offset_top = -39.0
+offset_right = 178.0
+offset_bottom = 39.0
+auto_width = true
+auto_height = true
+item_count = 4
+item_0/text = "1001111111111111111111111111111111111111111111111110"
+item_1/text = "2222"
+item_2/text = "44455"
+script = ExtResource("1_72t6e")

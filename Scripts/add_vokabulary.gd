@@ -16,6 +16,9 @@ func _on_save_pressed() -> void:
 		global.save_new_vokabulary(global.current_project,first_lang_edit.text,second_lang_edit.text,grammar_edit.text)
 	else:
 		global.save_new_vokabulary(global.current_project,first_lang_edit.text,second_lang_edit.text)
+	first_lang_edit.text = ""
+	second_lang_edit.text = ""
+	grammar_edit.text = ""
 
 
 func _on_back_pressed() -> void:

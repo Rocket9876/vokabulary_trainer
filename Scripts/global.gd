@@ -8,6 +8,8 @@ var main_path = "res://Scenes/main.tscn"
 
 var projects = []
 
+var vokabulary_settings = {}
+
 func _ready() -> void:
 	startup_loading_data()
 
@@ -44,8 +46,13 @@ func create_new_project(name,path,first_lang,second_lang,grammar = false):
 	save_projects()
 
 
-func save_new_vokabulary(project:Dictionary,first_lang_vok,second_lang_vok,grammar = null):
-	var vokabulary = {project["first language"]:first_lang_vok,project["second language"]:second_lang_vok,"value":0}
-	if grammar:
-		vokabulary += {"grammar":grammar}
+func save_new_vokabulary(project:Dictionary,first_lang_vok,second_lang_vok,grammar = ""):
+	var vokabulary
+	if FileAccess.file_exists(project["path"] + "vokabulary"):
+		var file = loading_data(project["path"] + "vokabulary")
+		vokabulary = file.get_var()
+		file.close()
+	else:
+		vokabulary = []
+	vokabulary += [{project["first language"]:first_lang_vok,project["second language"]:second_lang_vok,"value":0,"grammar":grammar}]
 	saving_data(project["path"] + "vokabulary",vokabulary)

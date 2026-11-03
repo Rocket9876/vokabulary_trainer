@@ -9,3 +9,7 @@ func _ready() -> void:
 
 func _on_add_vokabulary_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/add_vokabulary.tscn")
+
+
+func _on_test_vokabulary_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/test_vokabulary preperation.tscn")

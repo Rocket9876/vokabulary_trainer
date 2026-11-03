@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1ry1ff1i21e3"]
 
 [ext_resource type="Script" uid="uid://pjwjl48shne1" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://yawgsf0d3a06" path="res://Scenes/project_list.tscn" id="2_bo1nx"]
 
 [node name="main" type="Control" unique_id=1059408095]
 layout_mode = 3
@@ -18,21 +19,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ItemList" type="ItemList" parent="." unique_id=1623194741]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -118.0
-offset_top = -239.0
-offset_right = 118.0
-grow_horizontal = 2
-grow_vertical = 0
-item_count = 1
-item_0/text = "test"
 
 [node name="create project" type="Button" parent="." unique_id=1566238801]
 layout_mode = 1
@@ -62,5 +48,17 @@ text = "VOKABULARY TRAINER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="item_clicked" from="ItemList" to="." method="_on_item_list_item_clicked"]
+[node name="Project list" parent="." unique_id=1506799792 instance=ExtResource("2_bo1nx")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="pressed" from="create project" to="." method="_on_create_project_pressed"]
+[connection signal="item_clicked" from="Project list" to="." method="_on_project_list_item_clicked"]

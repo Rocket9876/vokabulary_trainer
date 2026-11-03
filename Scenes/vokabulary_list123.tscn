@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dnow7tcqr7oso"]
+
+[ext_resource type="Script" uid="uid://b2pss8f2fr8f8" path="res://Scripts/vokabulary_list.gd" id="1_hqghp"]
+
+[node name="Vokabulary list" type="Control" unique_id=1536104431]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hqghp")
+
+[node name="first language" type="RichTextLabel" parent="." unique_id=1239637612]
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 144.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "zhhhhhhhhhhh
+h
+h
+ujjj
+fgbfbfb
+fbfbfb
+fbfb
+dfghf
+
+
+hdr
+dhr
+dfh
+dfh"
+fit_content = true
+vertical_alignment = 3

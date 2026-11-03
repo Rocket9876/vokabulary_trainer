@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://ii4707ag1etn"]
+
+[ext_resource type="Script" uid="uid://diel86nme6rru" path="res://Scripts/vokabulary_test.gd" id="1_epomg"]
+
+[node name="vokabulary_test" type="Control" unique_id=1790378624]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_epomg")
+
+[node name="TEST" type="RichTextLabel" parent="." unique_id=886019273]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1246.5
+offset_right = 1246.5
+offset_bottom = 242.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 256
+text = "TEST"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lang edit" type="TextEdit" parent="." unique_id=1669879668]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.5
+offset_top = -217.5
+offset_right = 544.5
+offset_bottom = -142.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "first lang"
+
+[node name="grammar" type="TextEdit" parent="." unique_id=530605165]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.5
+offset_top = -36.5
+offset_right = 544.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "grammar"
+
+[node name="vokabulary item" type="RichTextLabel" parent="." unique_id=1469017160]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1152.0
+offset_top = -406.0
+offset_right = 1152.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=318044989]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.5
+offset_top = 306.0
+offset_right = 204.5
+offset_bottom = 458.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "SUBMIT"
