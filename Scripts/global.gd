@@ -10,17 +10,31 @@ var projects = []
 
 var vokabulary_settings = {}
 
+var vokabulary_stats
+
+var timer_time = 0
+
+
+
 func _ready() -> void:
+	DirAccess.make_dir_absolute(folder_path)
 	startup_loading_data()
+	streak_system()
+	print(get_day_count())
 
 var current_project
 
 var current_project_index
 
+var streak = 0
+
+
 func startup_loading_data():
 	load_projects()
 	print(projects)
 
+func get_day_count():
+	return int(Time.get_unix_time_from_system()/86400)
 
 
 func loading_data(path):
@@ -56,3 +70,19 @@ func save_new_vokabulary(project:Dictionary,first_lang_vok,second_lang_vok,gramm
 		vokabulary = []
 	vokabulary += [{project["first language"]:first_lang_vok,project["second language"]:second_lang_vok,"value":0,"grammar":grammar}]
 	saving_data(project["path"] + "vokabulary",vokabulary)
+
+
+func streak_system():
+	if FileAccess.file_exists(folder_path + "streak"):
+		var file = loading_data(folder_path + "streak")
+		var streak_temp = file.get_var()
+		file.close()
+		if streak_temp["day"] + 1 == get_day_count():
+			saving_data(folder_path + "streak",{"day": get_day_count(),"streak":streak_temp["streak"] + 1})
+			streak = streak_temp["streak"] + 1
+		elif streak_temp["day"] + 1 < get_day_count():
+			saving_data(folder_path + "streak",{"day": get_day_count(),"streak":1})
+			streak = 1
+	else:
+		saving_data(folder_path + "streak",{"day": get_day_count(),"streak":1})
+		streak = 1

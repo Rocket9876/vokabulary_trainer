@@ -70,23 +70,24 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "BACK"
 
-[node name="missing_name" type="RichTextLabel" parent="." unique_id=1108703640]
+[node name="somethings missing" type="RichTextLabel" parent="." unique_id=1108703640]
 visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -273.0
-offset_top = -274.5
-offset_right = 273.0
-offset_bottom = -133.5
+anchor_bottom = 1.0
+offset_left = -391.5
+offset_top = -231.0
+offset_right = 391.5
+offset_bottom = -90.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+mouse_filter = 2
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 64
-text = "(missing name)"
+text = "somethings missing"
 horizontal_alignment = 1
 
 [node name="already_exists" type="RichTextLabel" parent="." unique_id=1005341434]
@@ -161,6 +162,44 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 theme_override_colors/button_checked_color = Color(0.16473964, 0.39774323, 1, 1)
 text = "grammar"
+
+[node name="missing_first_lang" type="RichTextLabel" parent="." unique_id=1708818912]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -102.5
+offset_right = 273.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "(missing)"
+horizontal_alignment = 1
+
+[node name="missing_sec_lang" type="RichTextLabel" parent="." unique_id=1780327018]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = 122.5
+offset_right = 273.0
+offset_bottom = 263.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "(missing)"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
