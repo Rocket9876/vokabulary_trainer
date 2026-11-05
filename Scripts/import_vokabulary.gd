@@ -1,6 +1,39 @@
 extends Control
 
+@onready var project_list = $"Project list"
+var projects_without
 
+var current_vokabulary
+
+
+func _ready() -> void:
+	if FileAccess.file_exists(global.current_project["path"] + "vokabulary"):
+		var file = global.loading_data(global.current_project["path"] + "vokabulary")
+		current_vokabulary = file.get_var()
+		file.close()
+	else:
+		current_vokabulary = []
+	projects_without = global.projects
+	projects_without.erase(global.current_project)
+	project_list.item_count = projects_without.size()
+	for i in range(0,projects_without.size()):
+		project_list.set_item_text(i,global.projects[i]["name"])
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/project.tscn")
+
+
+func _on_project_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
+	if FileAccess.file_exists(projects_without[index]["path"] + "vokabulary"):
+		var file = global.loading_data(projects_without[index]["path"] + "vokabulary")
+		var imported_vokabulary = file.get_var()
+		file.close()
+		for i in imported_vokabulary:
+			i = {global.current_project["first language"]:i[projects_without[index]["first language"]],global.current_project["second language"]:i[projects_without[index]["second language"]],"grammar": i["grammar"],"value":0}
+		current_vokabulary += imported_vokabulary
+		global.saving_data(global.current_project["path"] + "vokabulary",current_vokabulary)
+		get_tree().change_scene_to_file("res://Scenes/project.tscn")
+
+	else:
+		$warning.visible = true
+	

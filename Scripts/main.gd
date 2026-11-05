@@ -6,7 +6,7 @@ func _on_create_project_pressed() -> void:
 
 
 func _ready() -> void:
-	$Streak.text = "STREAK: " + str(global.streak)
+	$Streak.text = "🔥STREAK: " + str(global.streak)
 
 func _on_project_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
 	global.current_project = global.projects[index]

@@ -20,7 +20,6 @@ func _ready() -> void:
 	DirAccess.make_dir_absolute(folder_path)
 	startup_loading_data()
 	streak_system()
-	print(get_day_count())
 
 var current_project
 
@@ -31,7 +30,6 @@ var streak = 0
 
 func startup_loading_data():
 	load_projects()
-	print(projects)
 
 func get_day_count():
 	return int(Time.get_unix_time_from_system()/86400)
@@ -74,6 +72,7 @@ func save_new_vokabulary(project:Dictionary,first_lang_vok,second_lang_vok,gramm
 
 func streak_system():
 	if FileAccess.file_exists(folder_path + "streak"):
+		
 		var file = loading_data(folder_path + "streak")
 		var streak_temp = file.get_var()
 		file.close()
@@ -83,6 +82,14 @@ func streak_system():
 		elif streak_temp["day"] + 1 < get_day_count():
 			saving_data(folder_path + "streak",{"day": get_day_count(),"streak":1})
 			streak = 1
+		else:
+			streak = streak_temp["streak"]
 	else:
 		saving_data(folder_path + "streak",{"day": get_day_count(),"streak":1})
 		streak = 1
+
+
+func delete_project(project):
+	DirAccess.remove_absolute(project["path"])
+	projects.erase(project)
+	save_projects()

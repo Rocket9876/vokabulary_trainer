@@ -19,7 +19,7 @@ var expected_result
 
 var expected_grammar_result
 
-var stats = {"right":0,"wrong":0}
+var stats = {"right":0,"wrong":0,"vokabulary asked":0}
 
 var vokabulary
 
@@ -28,6 +28,7 @@ var amount
 var index
 
 var timer_time = 0
+
 
 func _physics_process(delta: float) -> void:
 	timer_func(delta)
@@ -38,10 +39,13 @@ func _ready() -> void:
 	vokabulary = file.get_var()
 	grammar_correction.visible = global.current_project["grammar"]
 	file.close()
-	if global.vokabulary_settings["amount"] > 0:
+	if global.vokabulary_settings["infinity"]:
+		amount = 9999999999
+	elif global.vokabulary_settings["amount"] > 0:
 		amount = global.vokabulary_settings["amount"]
 	else:
 		amount = vokabulary.size() - 1
+		
 	
 	new_vokabulary()
 
@@ -74,8 +78,10 @@ func dir_index(number):
 
 func _on_continue_pressed() -> void:
 	amount -= 1
+	stats["vokabulary asked"] += 1
 	if not amount <= 0:
-		vokabulary.remove_at(index)
+		if not global.vokabulary_settings["infinity"]:
+			vokabulary.remove_at(index)
 		lang_edit.text = ""
 		grammar_edit.text = ""
 		$AnimationPlayer.play("out")
@@ -118,3 +124,9 @@ func value_advanced(correct):
 		vokabulary[index]["value"] -= 1
 		if vokabulary[index]["value"] < min_value:
 			vokabulary[index]["value"] = min_value
+
+
+func _on_stop_pressed() -> void:
+		global.vokabulary_stats = stats
+		global.timer_time = timer_time
+		get_tree().change_scene_to_file("res://Scenes/vokabulary_test_finish.tscn")

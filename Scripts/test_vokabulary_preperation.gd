@@ -3,6 +3,8 @@ extends Control
 @onready var grammar_checkbox = $grammar
 @onready var vokabulary_amount = $"amount vokabulary"
 @onready var vokabulary_test_direction = $"vokabulary test direction"
+@onready var infinity_checkbox = $"infinity modus"
+
 
 func _ready() -> void:
 	grammar_checkbox.visible = global.current_project["grammar"]
@@ -17,9 +19,9 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	if int(vokabulary_amount.text) > 0:
-		global.vokabulary_settings = {"test direction index":vokabulary_test_direction.selected,"advanced":$advanced.button_pressed,"grammar":grammar_checkbox.button_pressed,"amount":int(vokabulary_amount.text)}
+		global.vokabulary_settings = {"test direction index":vokabulary_test_direction.selected,"advanced":$advanced.button_pressed,"grammar":grammar_checkbox.button_pressed,"amount":int(vokabulary_amount.text),"infinity":infinity_checkbox.button_pressed}
 	else:
-		global.vokabulary_settings = {"test direction index":vokabulary_test_direction.selected,"advanced":$advanced.button_pressed,"grammar":grammar_checkbox.button_pressed,"amount":0}
+		global.vokabulary_settings = {"test direction index":vokabulary_test_direction.selected,"advanced":$advanced.button_pressed,"grammar":grammar_checkbox.button_pressed,"amount":0,"infinity":infinity_checkbox.button_pressed}
 	get_tree().change_scene_to_file("res://Scenes/vokabulary_test.tscn")
 
 
