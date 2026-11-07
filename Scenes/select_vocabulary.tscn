@@ -51,6 +51,7 @@ offset_right = -35.0
 offset_bottom = -35.0
 grow_horizontal = 0
 grow_vertical = 0
+tooltip_text = "If no vocabulary is selected it will just use the normal vocabulary"
 theme_override_font_sizes/font_size = 64
 text = "CONTINUE"
 

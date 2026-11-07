@@ -11,14 +11,18 @@ func _ready() -> void:
 
 
 func _on_save_pressed() -> void:
-	$AnimationPlayer.play("vocabulary updatet")
-	if global.current_project["grammar"]:
-		global.save_new_vocabulary(global.current_project,first_lang_edit.text,second_lang_edit.text,grammar_edit.text)
+	if first_lang_edit.text.strip_edges() and second_lang_edit.text.strip_edges():
+		$warning.visible = false
+		$AnimationPlayer.play("vocabulary updatet")
+		if global.current_project["grammar"]:
+			global.save_new_vocabulary(global.current_project,first_lang_edit.text,second_lang_edit.text,grammar_edit.text)
+		else:
+			global.save_new_vocabulary(global.current_project,first_lang_edit.text,second_lang_edit.text)
+		first_lang_edit.text = ""
+		second_lang_edit.text = ""
+		grammar_edit.text = ""
 	else:
-		global.save_new_vocabulary(global.current_project,first_lang_edit.text,second_lang_edit.text)
-	first_lang_edit.text = ""
-	second_lang_edit.text = ""
-	grammar_edit.text = ""
+		$warning.visible = true
 
 
 func _on_back_pressed() -> void:

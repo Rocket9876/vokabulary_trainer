@@ -22,7 +22,7 @@ func _on_button_pressed() -> void:
 		global.vocabulary_settings = {"test direction index":vocabulary_test_direction.selected,"advanced":$advanced.button_pressed,"grammar":grammar_checkbox.button_pressed,"amount":int(vocabulary_amount.text),"infinity":infinity_checkbox.button_pressed}
 	else:
 		global.vocabulary_settings = {"test direction index":vocabulary_test_direction.selected,"advanced":$advanced.button_pressed,"grammar":grammar_checkbox.button_pressed,"amount":0,"infinity":infinity_checkbox.button_pressed}
-	if select_vocabulary:
+	if select_vocabulary.button_pressed:
 		get_tree().change_scene_to_file("res://Scenes/select_vocabulary.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/vocabulary_test.tscn")

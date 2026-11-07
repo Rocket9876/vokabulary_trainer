@@ -190,5 +190,25 @@ text = "✅VOKABULARY UPDATED
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="warning" type="RichTextLabel" parent="." unique_id=1619182778]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -179.75
+offset_top = -191.0
+offset_right = 179.75
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "(somethings missing)"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
