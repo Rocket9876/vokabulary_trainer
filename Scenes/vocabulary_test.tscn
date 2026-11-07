@@ -1,0 +1,315 @@
+[gd_scene format=3 uid="uid://ii4707ag1etn"]
+
+[ext_resource type="Script" uid="uid://diel86nme6rru" path="res://Scripts/vocabulary_test.gd" id="1_sk03y"]
+
+[sub_resource type="Animation" id="Animation_epomg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("solution:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("solution:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-450, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1l8h1"]
+resource_name = "in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("solution:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("solution:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-450, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d8doi"]
+resource_name = "out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("solution:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-450, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("solution:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wmiyo"]
+_data = {
+&"RESET": SubResource("Animation_epomg"),
+&"in": SubResource("Animation_1l8h1"),
+&"out": SubResource("Animation_d8doi")
+}
+
+[node name="vocabulary_test" type="Control" unique_id=1790378624]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sk03y")
+max_value = 5
+
+[node name="TEST" type="RichTextLabel" parent="." unique_id=886019273]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1246.5
+offset_right = 1246.5
+offset_bottom = 242.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 256
+text = "TEST"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lang edit" type="TextEdit" parent="." unique_id=1669879668]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.5
+offset_top = -217.5
+offset_right = 544.5
+offset_bottom = -142.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "first lang"
+
+[node name="grammar" type="TextEdit" parent="." unique_id=530605165]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -544.5
+offset_top = -36.5
+offset_right = 544.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "grammar"
+
+[node name="vocabulary item" type="RichTextLabel" parent="." unique_id=1469017160]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1152.0
+offset_top = -406.0
+offset_right = 1152.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=318044989]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.5
+offset_top = 306.0
+offset_right = 204.5
+offset_bottom = 458.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "SUBMIT"
+
+[node name="solution" type="Control" parent="." unique_id=471253337]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_right = 1854.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="solution" unique_id=1767220188]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19500001
+anchor_bottom = 1.0
+offset_right = 0.7199707
+color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+
+[node name="big text correct" type="RichTextLabel" parent="solution" unique_id=37332126]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19500001
+offset_right = 0.7199707
+offset_bottom = 125.0
+theme_override_font_sizes/normal_font_size = 64
+text = "✅ CORRECT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="big text wrong" type="RichTextLabel" parent="solution" unique_id=1786297093]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19500001
+offset_right = 0.7199707
+offset_bottom = 125.0
+theme_override_font_sizes/normal_font_size = 64
+text = "❌ WRONG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="continue" type="Button" parent="solution" unique_id=887256989]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.19500001
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = -119.0
+offset_right = -89.28003
+offset_bottom = -39.0
+theme_override_font_sizes/font_size = 64
+text = "Continue"
+
+[node name="translate correction" type="RichTextLabel" parent="solution" unique_id=166020461]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19500001
+anchor_bottom = 1.0
+offset_top = 125.0
+offset_right = 0.7199707
+offset_bottom = -977.0
+theme_override_font_sizes/normal_font_size = 32
+horizontal_alignment = 1
+
+[node name="grammar correction" type="RichTextLabel" parent="solution" unique_id=1912566323]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19500001
+anchor_bottom = 1.0
+offset_top = 319.0
+offset_right = 0.7199707
+offset_bottom = -783.0
+theme_override_font_sizes/normal_font_size = 32
+text = "GRAMMAR:
+sdfsfsfsfsf"
+horizontal_alignment = 1
+
+[node name="Stats" type="RichTextLabel" parent="solution" unique_id=1099266305]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.19500001
+anchor_bottom = 1.0
+offset_top = -298.0
+offset_right = 0.7199707
+offset_bottom = -119.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Stats:
+Correct answers: 
+Wrong answers: 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=11635080]
+libraries/ = SubResource("AnimationLibrary_wmiyo")
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1962944346]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -763.0
+offset_bottom = 76.0
+grow_horizontal = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "11313131324"
+horizontal_alignment = 2
+
+[node name="STOP" type="Button" parent="." unique_id=1637696262]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -199.0
+offset_top = -90.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "STOP"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="solution/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="STOP" to="." method="_on_stop_pressed"]

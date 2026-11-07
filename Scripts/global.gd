@@ -1,6 +1,6 @@
 extends Node
 
-var folder_path = "user://vokabulary_trainer/"
+var folder_path = "user://vocabulary_trainer/"
 
 var projects_path = folder_path + "projects"
 
@@ -8,13 +8,13 @@ var main_path = "res://Scenes/main.tscn"
 
 var projects = []
 
-var vokabulary_settings = {}
+var vocabulary_settings = {}
 
-var vokabulary_stats
+var vocabulary_stats
 
 var timer_time = 0
 
-
+var asked_vocabulary = []
 
 func _ready() -> void:
 	DirAccess.make_dir_absolute(folder_path)
@@ -58,16 +58,16 @@ func create_new_project(name,path,first_lang,second_lang,grammar = false):
 	save_projects()
 
 
-func save_new_vokabulary(project:Dictionary,first_lang_vok,second_lang_vok,grammar = ""):
-	var vokabulary
-	if FileAccess.file_exists(project["path"] + "vokabulary"):
-		var file = loading_data(project["path"] + "vokabulary")
-		vokabulary = file.get_var()
+func save_new_vocabulary(project:Dictionary,first_lang_vok,second_lang_vok,grammar = ""):
+	var vocabulary
+	if FileAccess.file_exists(project["path"] + "vocabulary"):
+		var file = loading_data(project["path"] + "vocabulary")
+		vocabulary = file.get_var()
 		file.close()
 	else:
-		vokabulary = []
-	vokabulary += [{project["first language"]:first_lang_vok,project["second language"]:second_lang_vok,"value":0,"grammar":grammar}]
-	saving_data(project["path"] + "vokabulary",vokabulary)
+		vocabulary = []
+	vocabulary += [{project["first language"]:first_lang_vok,project["second language"]:second_lang_vok,"value":0,"grammar":grammar}]
+	saving_data(project["path"] + "vocabulary",vocabulary)
 
 
 func streak_system():
@@ -93,3 +93,9 @@ func delete_project(project):
 	DirAccess.remove_absolute(project["path"])
 	projects.erase(project)
 	save_projects()
+
+func load_current_vocabulary():
+	var file = loading_data(current_project["path"] + "vocabulary")
+	var vocabulary = file.get_var()
+	file.close()
+	return vocabulary

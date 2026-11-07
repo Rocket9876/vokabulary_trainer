@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c26jngxfbr7hf"]
+
+[ext_resource type="Script" uid="uid://cvcjai3jg15h" path="res://Scripts/vocabulary_list.gd" id="1_fpone"]
+
+[node name="vocabulary list" type="ItemList" unique_id=1139622200]
+offset_left = -642.0
+offset_top = -648.0
+offset_right = 642.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 32
+item_count = 2
+item_0/text = "wdsdsdds => esfsdgsdbsdbv "
+script = ExtResource("1_fpone")
