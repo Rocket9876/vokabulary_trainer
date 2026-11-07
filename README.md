@@ -3,7 +3,7 @@
 ## Description
 
 This is a vocabulary trainer I made myself because I am not a big fan of all vocabulary trainer that already exist.
-You can create new projects, add vocabulary to there projects, import vocabulary from other projects in the current one, you can customise how the vocabulary trainer tests you and much more.
+You can create new projects, add vocabulary to these projects, import vocabulary from other projects into the current one, you can customise how the vocabulary trainer tests you and much more.
 
 ## Try it
 
