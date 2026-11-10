@@ -1,6 +1,6 @@
-# Vokabulary trainer
+# Vocabulary trainer
 
-A Vokabulary trainer with many features, for Students and everyone who wants to learn something new
+A Vocabulary trainer with many features, for Students and everyone who wants to learn something new
 
 <img width="2559" height="1369" alt="image" src="https://github.com/user-attachments/assets/727b05dd-9d02-4258-9335-ee431030d477" />
 
